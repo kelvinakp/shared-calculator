@@ -191,7 +191,7 @@ export default function Home() {
           color: "#0f172a",
           font: {
             size: 14,
-            weight: "600",
+            weight: 600,
           },
           padding: {
             bottom: 16,
