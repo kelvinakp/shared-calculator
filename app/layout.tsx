@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Padauk } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const padauk = Padauk({
+  subsets: ["myanmar", "latin"],
+  weight: ["400", "700"],
+  variable: "--font-padauk",
 });
 
 export const metadata: Metadata = {
@@ -23,11 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="my" className={`${padauk.variable} h-full antialiased`}>
+      <body className={`${padauk.className} min-h-full flex flex-col bg-gray-50`}>
+        {children}
+      </body>
     </html>
   );
 }
